@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${APP_DB_URL:localhost}:${APP_DB_PORT:5432}/${APP_DB_NAME:rapid-repair-db-pg}
+    username: ${APP_DB_USERNAME:postgres}
+    password: ${APP_DB_PASSWORD:admin}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    openInView: false
+    show_sql: true
+    generate-ddl: true
+  data:
+    jpa:
+      repositories.enabled: true
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  token-duration-minutes: ${TOKEN_DURATION_MINUTES:600}
